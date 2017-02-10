@@ -41,7 +41,13 @@ INSTALLED_APPS = [
 
     # Project Apps
     'parking.apps.ParkingConfig',
-    'authorize.apps.AuthorizeConfig'
+    'authorize.apps.AuthorizeConfig',
+
+    # Django Rest Framework
+    'rest_framework',
+
+    # Django Rest Swagger (auto-api documentation)
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [

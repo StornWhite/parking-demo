@@ -1,1 +1,9 @@
-Django==1.10.5          # backend framework
+Django==1.10.5              # backend framework
+phonenumbers==8.2.0         # phone number validation & formatting
+djangorestframework==3.5.3  # API engine
+coreapi==2.2.3              # Web API representation (used by DRF)
+django-filter==1.0.1        # Object filtering for DRF
+Markdown==2.6.8             # Markdown engine (for DRF endpoint documentation)
+django-crispy-forms==1.6.1  # HTML form engine (used by DRF)
+django-guardian==1.4.6      # Object-level permission framework (used by DRF)
+django-rest-swagger==2.1.1  # API Auto-documentation

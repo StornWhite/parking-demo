@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     # Project Apps
-    'parking'
+    'parking.apps.ParkingConfig',
+    'authorize.apps.AuthorizeConfig'
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'parking.urls'
+
+# Custom User model
+AUTH_USER_MODEL = 'authorize.User'
 
 TEMPLATES = [
     {

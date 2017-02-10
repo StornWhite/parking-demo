@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class StorncoConfig(AppConfig):
+class ParkingConfig(AppConfig):
     name = 'parking'

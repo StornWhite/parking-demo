@@ -19,12 +19,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '#83rh^gws0+%ix%j+2_08o-^ig%cn%j)iq*n7a41u0r^!4)^6c'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = False
 ALLOWED_HOSTS = []
 
 
@@ -132,3 +128,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Django Rest Framework:
+REST_FRAMEWORK = {
+
+    'DEFAULT_THROTTLE_CLASSES': (
+        'parking.libs.api.throttling.BurstRateThrottle',
+        'parking.libs.api.throttling.SustainedRateThrottle'
+    ),
+    'DEFAULT_THROTTLE_RATES': {
+        'burst': '60/min',
+        'sustained': '1000/day'
+    },
+
+    'PAGE_SIZE': 100,
+
+    'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+
+}

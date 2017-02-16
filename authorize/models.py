@@ -1,5 +1,6 @@
 import django.db.models as db_models
 import django.contrib.auth.models as auth_models
+from django.core.validators import MinLengthValidator
 
 
 class UserManager(auth_models.BaseUserManager):
@@ -74,7 +75,12 @@ class User(auth_models.AbstractBaseUser, auth_models.PermissionsMixin):
     User model is customized to use email address as username.
     """
     email = db_models.EmailField(unique=True)
-    phone = db_models.CharField(max_length=15)
+    phone = db_models.CharField(
+        max_length=20,
+        validators=[
+            MinLengthValidator(limit_value=10)
+        ]
+    )
     is_active = db_models.BooleanField(default=True)
     is_staff = db_models.BooleanField(default=False)
 

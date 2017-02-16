@@ -7,3 +7,5 @@ Markdown==2.6.8             # Markdown engine (for DRF endpoint documentation)
 django-crispy-forms==1.6.1  # HTML form engine (used by DRF)
 django-guardian==1.4.6      # Object-level permission framework (used by DRF)
 django-rest-swagger==2.1.1  # API Auto-documentation
+ipython==5.2.2              # ipython shell
+factory-boy==2.8.1          # test object generator
